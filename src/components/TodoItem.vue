@@ -1,17 +1,37 @@
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "TodoItem",
   props: {
-    msg: String
+    task: {
+      type: Object,
+      required: true,
+    }
+  },
+  methods: {
+    ...mapActions([
+      'removeTask',
+      'reverseCompleted',
+    ])
   }
 }
 </script>
 
 <template>
   <li>
-    <input type="checkbox"/>
-    {{ msg }}
-    <button type="button">X</button>
+    <input
+        type="checkbox"
+        :checked="task.completed"
+        @change="reverseCompleted(task)"
+    />
+    {{ task.title }}
+    <button
+        type="button"
+        @click="removeTask(task)"
+    >
+      X
+    </button>
   </li>
 </template>
 

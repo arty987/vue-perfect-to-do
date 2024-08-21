@@ -1,20 +1,26 @@
 <script>
 import TodoItem from "@/components/TodoItem.vue";
+import {mapGetters} from "vuex";
 
 export default {
-  name: "TodoList",
+  name: 'TodoList',
   components: {
     TodoItem
+  },
+  computed: {
+    ...mapGetters([
+      'tasks'
+    ])
   }
 }
 </script>
 
 <template>
-  <TodoItem msg="Meet George"/>
-  <TodoItem msg="Hit the gym"/>
-  <TodoItem msg="Buy eggs"/>
-  <TodoItem msg="Read a book"/>
-  <TodoItem msg="Organize office"/>
+  <TodoItem
+      v-for="task in tasks"
+      :key="task.id"
+      :task="task"
+  />
 </template>
 
 <style scoped>

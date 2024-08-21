@@ -1,16 +1,48 @@
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  name: "TodoFooter"
+  name: "TodoFooter",
+  methods: {
+    ...mapActions([
+      'displayAll',
+      'displayCompleted',
+      'displayActive',
+      'clearCompleted',
+    ])
+  },
+  computed: {
+    ...mapGetters([
+      'activeCount'
+    ])
+  }
 }
+
 </script>
 
 <template>
   <li>
-    <span>5 items left</span>
-    <button type="button">All</button>
-    <button type="button">Active</button>
-    <button type="button">Completed</button>
-    <button type="button">Clear completed</button>
+    <span>{{ activeCount }} items left</span>
+    <button
+        type="button"
+        @click="displayAll">
+      All
+    </button>
+    <button
+        type="button"
+        @click="displayActive">
+      Active
+    </button>
+    <button
+        type="button"
+        @click="displayCompleted">
+      Completed
+    </button>
+    <button
+        type="button"
+        @click="clearCompleted">
+      Clear completed
+    </button>
   </li>
 </template>
 
