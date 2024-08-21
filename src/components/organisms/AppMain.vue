@@ -1,14 +1,14 @@
 <script>
-import TodoHeader from "@/components/TodoHeader.vue";
-import TodoList from "@/components/TodoList.vue";
-import TodoFooter from "@/components/TodoFooter.vue";
+import TodoHeader from "@/components/molecules/TodoHeader.vue";
+import TodoList from "@/components/molecules/TodoList.vue";
+import TodoFooter from "@/components/molecules/TodoFooter.vue";
 
 export default {
   name: "AppMain",
   components: {
-    TodoFooter,
+    TodoHeader,
     TodoList,
-    TodoHeader
+    TodoFooter
   }
 }
 </script>

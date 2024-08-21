@@ -1,17 +1,14 @@
 <template>
-  <AppHeader/>
-  <AppMain/>
+  <AppContent/>
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader.vue";
-import AppMain from "@/components/AppMain.vue";
+import AppContent from "@/components/templates/AppContent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    AppMain,
-    AppHeader
+    AppContent,
   }
 }
 </script>

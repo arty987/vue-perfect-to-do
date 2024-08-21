@@ -1,22 +1,22 @@
 <script>
-import TodoItem from "@/components/TodoItem.vue";
+import TodoTask from "@/components/molecules/TodoTask.vue";
 import {mapGetters} from "vuex";
 
 export default {
-  name: 'TodoList',
+  name: "TodoList",
   components: {
-    TodoItem
+    TodoTask
   },
   computed: {
     ...mapGetters([
-      'tasks'
+      "tasks"
     ])
   }
 }
 </script>
 
 <template>
-  <TodoItem
+  <TodoTask
       v-for="task in tasks"
       :key="task.id"
       :task="task"
