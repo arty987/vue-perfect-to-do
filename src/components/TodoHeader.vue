@@ -14,8 +14,9 @@ export default {
   },
   methods: {
     addTask() {
-      if (this.inputValue.trim()) {
-        this.$store.dispatch('addTask', this.inputValue);
+      const inputValue = this.inputValue.trim();
+      if (inputValue) {
+        this.$store.dispatch('addTask', inputValue);
         this.inputValue = '';
       }
     },
