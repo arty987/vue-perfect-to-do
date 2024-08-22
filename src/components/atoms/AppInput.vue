@@ -24,12 +24,19 @@ export default {
 <template>
   <input
       type="text"
-      placeholder="Title..."
+      placeholder="Please type your task here..."
       v-model="inputValue"
+      maxlength="150"
       @keyup.enter="addTask"
-      @keyup.esc="clearInputValue"/>
+      @keyup.esc="clearInputValue"
+  />
 </template>
 
 <style scoped>
-
+input {
+  width: 100%;
+  margin-left: 10px;
+  outline: none;
+  border: none;
+}
 </style>

@@ -17,6 +17,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      "tasks",
       "activeCount"
     ])
   }
@@ -24,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <li>
+  <li v-if="tasks.length" class="list-group-item">
     <span>{{ activeCount }} items left</span>
     <AppButton @click="displayAll">All</AppButton>
     <AppButton @click="displayActive">Active</AppButton>
@@ -34,5 +35,7 @@ export default {
 </template>
 
 <style scoped>
-
+.list-group-item {
+  border-top: none;
+}
 </style>

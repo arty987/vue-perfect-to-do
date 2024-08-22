@@ -15,7 +15,3 @@ export default {
   <AppHeader/>
   <AppMain/>
 </template>
-
-<style scoped>
-
-</style>

@@ -23,13 +23,10 @@ export default {
 </script>
 
 <template>
+  <p v-if="!tasks.length" class="text-center text-white">No tasks have been added yet</p>
   <draggable :list="tasks" @start="drag = true" @end="drag = false" item-key="id">
     <template #item="{ element }">
       <TodoTask :task="element"/>
     </template>
   </draggable>
 </template>
-
-<style scoped>
-
-</style>

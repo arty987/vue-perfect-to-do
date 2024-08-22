@@ -21,7 +21,3 @@ export default {
       :checked="checked"
   />
 </template>
-
-<style scoped>
-
-</style>
