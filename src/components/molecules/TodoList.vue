@@ -1,11 +1,18 @@
 <script>
 import TodoTask from "@/components/molecules/TodoTask.vue";
 import {mapGetters} from "vuex";
+import draggable from "vuedraggable";
 
 export default {
   name: "TodoList",
+  data() {
+    return {
+      drag: false,
+    }
+  },
   components: {
-    TodoTask
+    TodoTask,
+    draggable
   },
   computed: {
     ...mapGetters([
@@ -16,11 +23,11 @@ export default {
 </script>
 
 <template>
-  <TodoTask
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-  />
+  <draggable :list="tasks" @start="drag = true" @end="drag = false" item-key="id">
+    <template #item="{ element }">
+      <TodoTask :task="element"/>
+    </template>
+  </draggable>
 </template>
 
 <style scoped>
