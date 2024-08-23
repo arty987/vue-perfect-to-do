@@ -2,10 +2,10 @@ export default {
     tasks(state) {
         const tasks = state.tasks;
         const filter = state.filter;
-        if (filter === 'active') {
+        if (filter === 'Active') {
             return tasks.filter(filter => !filter.completed);
         }
-        if (filter === 'completed') {
+        if (filter === 'Completed') {
             return tasks.filter(filter => filter.completed);
         }
         return tasks;

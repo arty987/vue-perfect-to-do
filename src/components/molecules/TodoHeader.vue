@@ -8,13 +8,33 @@ export default {
     AppInput,
     AppCheckbox
   },
+  data() {
+    return {
+      inputValue: "",
+    };
+  },
+  methods: {
+    addTask() {
+      const inputValue = this.inputValue.trim();
+      if (inputValue) {
+        this.$store.dispatch("addTask", inputValue);
+        this.inputValue = "";
+      }
+    },
+    clearInputValue() {
+      this.inputValue = "";
+    },
+  }
 }
 </script>
 
 <template>
   <li class="list-group-item d-flex justify-content-start align-items-center">
     <AppCheckbox :disabled="true"/>
-    <AppInput/>
+    <AppInput placeholder="Please type your task here..."
+              v-model="inputValue"
+              @enter="addTask"
+              @esc="clearInputValue"/>
   </li>
 </template>
 

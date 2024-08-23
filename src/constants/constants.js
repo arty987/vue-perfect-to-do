@@ -1,0 +1,1 @@
+export const filters = Object.freeze(["All", "Active", "Completed"]);

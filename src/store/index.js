@@ -6,7 +6,7 @@ import plugins from "@/store/plugins";
 
 const defaultState = {
     tasks: JSON.parse(localStorage.getItem('tasks')) || [],
-    filter: 'all'
+    filter: 'All'
 }
 
 export default createStore({

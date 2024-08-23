@@ -1,21 +1,25 @@
 <script>
 export default {
   name: "AppInput",
-  data() {
-    return {
-      inputValue: "",
-    };
+  props: {
+    modelValue: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
-    addTask() {
-      const inputValue = this.inputValue.trim();
-      if (inputValue) {
-        this.$store.dispatch("addTask", inputValue);
-        this.inputValue = "";
-      }
+    handleEnter() {
+      this.$emit("enter");
     },
-    clearInputValue() {
-      this.inputValue = "";
+    handleEsc() {
+      this.$emit("esc");
+    },
+    handleInput(event) {
+      this.$emit("update:modelValue", event.target.value);
     }
   }
 }
@@ -24,11 +28,12 @@ export default {
 <template>
   <input
       type="text"
-      placeholder="Please type your task here..."
-      v-model="inputValue"
+      :placeholder="placeholder"
       maxlength="150"
-      @keyup.enter="addTask"
-      @keyup.esc="clearInputValue"
+      :value="modelValue"
+      @input="handleInput"
+      @keyup.enter="handleEnter"
+      @keyup.esc="handleEsc"
   />
 </template>
 

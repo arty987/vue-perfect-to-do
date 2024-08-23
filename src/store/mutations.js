@@ -18,14 +18,8 @@ export default {
             completed: !task.completed
         }
     },
-    displayAll(state) {
-        state.filter = 'all';
-    },
-    displayCompleted(state) {
-        state.filter = 'completed';
-    },
-    displayActive(state) {
-        state.filter = 'active';
+    setFilter(state, filter) {
+        state.filter = filter;
     },
     clearCompleted(state) {
         state.tasks = state.tasks.filter(filter => !filter.completed);

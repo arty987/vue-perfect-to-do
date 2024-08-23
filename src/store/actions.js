@@ -8,14 +8,8 @@ export default {
     reverseCompleted({commit}, task) {
         commit('reverseCompleted', task);
     },
-    displayAll({commit}) {
-        commit('displayAll');
-    },
-    displayCompleted({commit}) {
-        commit('displayCompleted');
-    },
-    displayActive({commit}) {
-        commit('displayActive');
+    setFilter({commit}, filter) {
+        commit('setFilter', filter);
     },
     clearCompleted({commit}) {
         commit('clearCompleted');
