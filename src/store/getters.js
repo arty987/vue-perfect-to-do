@@ -12,5 +12,8 @@ export default {
     },
     activeCount(state) {
         return state.tasks.filter(item => !item.completed).length;
+    },
+    filter(state) {
+        return state.filter;
     }
 }

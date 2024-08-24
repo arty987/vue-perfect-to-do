@@ -1,47 +1,25 @@
 <script>
-import AppCheckbox from "@/components/atoms/AppCheckbox.vue";
-import AppInput from "@/components/atoms/AppInput.vue";
-
 export default {
   name: "TodoHeader",
-  components: {
-    AppInput,
-    AppCheckbox
-  },
-  data() {
-    return {
-      inputValue: "",
-    };
-  },
-  methods: {
-    addTask() {
-      const inputValue = this.inputValue.trim();
-      if (inputValue) {
-        this.$store.dispatch("addTask", inputValue);
-        this.inputValue = "";
-      }
-    },
-    clearInputValue() {
-      this.inputValue = "";
-    },
-  }
 }
 </script>
 
 <template>
-  <li class="list-group-item d-flex justify-content-start align-items-center">
-    <AppCheckbox :disabled="true"/>
-    <AppInput placeholder="Please type your task here..."
-              v-model="inputValue"
-              @enter="addTask"
-              @esc="clearInputValue"/>
-  </li>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="heading">T O D O</h1>
+    <img class="logo" alt="logo" src="../../assets/icons/logo.svg"/>
+  </div>
 </template>
 
-<style scoped>
-.list-group-item {
-  margin-bottom: 20px;
-  border-bottom-right-radius: var(--bs-border-radius);
-  border-bottom-left-radius: var(--bs-border-radius);
+<style scoped lang="scss">
+.heading {
+  color: white;
+  font-weight: 650;
+}
+
+.logo {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(38deg) brightness(101%) contrast(104%);
+  width: 30px;
+  height: 30px;
 }
 </style>

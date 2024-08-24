@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <button type="button">
+  <button type="button" class="app-button">
     <slot></slot>
   </button>
 </template>

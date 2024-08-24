@@ -11,6 +11,11 @@ export default {
       required: true,
     },
   },
+  emits: [
+    "enter",
+    "esc",
+    "update:modelValue"
+  ],
   methods: {
     handleEnter() {
       this.$emit("enter");
@@ -28,6 +33,7 @@ export default {
 <template>
   <input
       type="text"
+      class="app-input"
       :placeholder="placeholder"
       maxlength="150"
       :value="modelValue"
@@ -36,12 +42,3 @@ export default {
       @keyup.esc="handleEsc"
   />
 </template>
-
-<style scoped>
-input {
-  width: 100%;
-  margin-left: 10px;
-  outline: none;
-  border: none;
-}
-</style>
