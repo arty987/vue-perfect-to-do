@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoHeader.vue Should render TodoHeader 1`] = `
+<div
+  class="d-flex justify-content-between align-items-center mb-4"
+>
+  <h1
+    class="heading"
+  >
+    T O D O
+  </h1>
+  <img
+    alt="logo"
+    class="logo"
+    src=""
+  />
+</div>
+`;

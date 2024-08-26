@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppButton.vue Should render AppButton 1`] = `
+<button
+  class="app-button"
+  type="button"
+>
+  
+  Button
+  
+</button>
+`;

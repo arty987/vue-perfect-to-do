@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoInput.vue Should render TodoInput 1`] = `
+<li
+  class="list-group-item d-flex justify-content-start align-items-center"
+>
+  <app-checkbox-stub
+    checked="false"
+    disabled="true"
+  />
+  <app-input-stub
+    modelvalue=""
+    placeholder="Please type your task here..."
+  />
+</li>
+`;

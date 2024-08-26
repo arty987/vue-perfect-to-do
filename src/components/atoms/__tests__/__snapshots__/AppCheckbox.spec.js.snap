@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppCheckbox.vue Should render AppCheckbox with default props 1`] = `
+<input
+  class="app-checkbox"
+  type="checkbox"
+/>
+`;
+
+exports[`AppCheckbox.vue Should render AppCheckbox with props set 1`] = `
+<input
+  checked=""
+  class="app-checkbox"
+  disabled=""
+  type="checkbox"
+/>
+`;
