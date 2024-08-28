@@ -26,21 +26,42 @@ export default {
 
 <template>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    <AppCheckbox :checked="task.completed" @change="reverseCompleted(task)"/>
-    <div class="task-title">{{ task.title }}</div>
-    <AppButton @click="removeTask(task)">X</AppButton>
+    <div class="d-flex flex-row align-items-center">
+      <AppCheckbox :checked="task.completed" @change="reverseCompleted(task)"/>
+      <div :class="[
+            'task-title',
+            { 'completed': task.completed }
+          ]">
+        {{ task.title }}
+      </div>
+    </div>
+    <AppButton @click="removeTask(task)" class="btn-close"/>
   </li>
 </template>
 
-<style scoped>
-.list-group-item:first-child {
-  border-top-right-radius: var(--bs-border-radius);
-  border-top-left-radius: var(--bs-border-radius);
+<style scoped lang="scss">
+.list-group-item {
+  border-right: none;
+  border-left: none;
+
+  &:hover > .app-button {
+    display: block;
+  }
+}
+
+.app-button {
+  display: none;
 }
 
 .task-title {
-  width: 100%;
+  width: 390px;
   margin-inline: 10px;
   word-break: break-all;
+
+  &.completed {
+    text-decoration: line-through;
+    text-decoration-thickness: from-font;
+    color: lightgrey;
+  }
 }
 </style>

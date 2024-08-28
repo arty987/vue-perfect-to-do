@@ -18,7 +18,10 @@ export default {
     ...mapGetters([
       "tasks",
       "activeCount"
-    ])
+    ]),
+    ...mapGetters({
+      currentFilter: 'filter'
+    })
   },
   created() {
     this.filters = filters;
@@ -27,19 +30,37 @@ export default {
 </script>
 
 <template>
-  <li v-if="tasks.length" class="list-group-item">
+  <li class="list-group-item d-flex align-items-center justify-content-between">
     <span>{{ activeCount }} items left</span>
-    <AppButton v-for="filter in filters"
-               :key="filter"
-               @click="setFilter(filter)">
-      {{ filter }}
-    </AppButton>
+    <div>
+      <AppButton v-for="filter in filters"
+                 :key="filter"
+                 @click="setFilter(filter)"
+                 :class="{ active: filter === currentFilter }">
+        {{ filter }}
+      </AppButton>
+    </div>
     <AppButton @click="clearCompleted">Clear completed</AppButton>
   </li>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .list-group-item {
-  border-top: none;
+  font-size: 13px;
+  color: grey;
+}
+
+.app-button {
+  border: none;
+  background: none;
+  color: inherit;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.active {
+  color: blue;
 }
 </style>
