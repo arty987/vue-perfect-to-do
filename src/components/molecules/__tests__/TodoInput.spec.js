@@ -1,35 +1,34 @@
 import {shallowMount} from '@vue/test-utils'
-import TodoInput from "@/components/molecules/TodoInput.vue";
-import {createStore} from "vuex";
-import AppInput from "@/components/atoms/AppInput.vue";
+import TodoInput from '@/components/molecules/TodoInput.vue';
+import {createStore} from 'vuex';
+import AppInput from '@/components/atoms/AppInput.vue';
 
 describe('TodoInput.vue', () => {
 
     let actions;
-    let store;
+    let wrapper
 
     beforeEach(() => {
         actions = {
             addTask: jest.fn()
         };
 
-        store = createStore({
+        const store = createStore({
             actions
         });
-    });
 
-    it('Should render TodoInput', () => {
-        const wrapper = shallowMount(TodoInput);
-        expect(wrapper.element).toMatchSnapshot();
-    });
-
-    it('Should add new task on enter', async () => {
-        const wrapper = shallowMount(TodoInput, {
+        wrapper = shallowMount(TodoInput, {
             global: {
                 plugins: [store]
             }
         });
+    });
 
+    it('Should render TodoInput', () => {
+        expect(wrapper.element).toMatchSnapshot();
+    });
+
+    it('Should add new task on enter', async () => {
         const input = wrapper.findComponent(AppInput);
 
         await input.setValue('new task');
@@ -40,12 +39,6 @@ describe('TodoInput.vue', () => {
     });
 
     it('Should clear input field on esc', async () => {
-        const wrapper = shallowMount(TodoInput, {
-            global: {
-                plugins: [store]
-            }
-        });
-
         const input = wrapper.findComponent(AppInput);
 
         await input.setValue('new task');
