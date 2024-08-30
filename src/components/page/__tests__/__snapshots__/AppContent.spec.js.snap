@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContent.vue Should render AppContent 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <app-header-stub />
+  <app-main-stub />
+  
+</div>
+`;

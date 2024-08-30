@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoTask.vue Should render TodoTask 1`] = `
+<li
+  class="list-group-item d-flex justify-content-between align-items-center"
+>
+  <div
+    class="d-flex flex-row align-items-center"
+  >
+    <app-checkbox-stub
+      checked="true"
+      disabled="false"
+    />
+    <div
+      class="task-title completed"
+    >
+      Task 1
+    </div>
+  </div>
+  <app-button-stub
+    class="btn-close"
+  />
+</li>
+`;
+
+exports[`TodoTask.vue Should render TodoTask 2`] = `
+<li
+  class="list-group-item d-flex justify-content-between align-items-center"
+>
+  <div
+    class="d-flex flex-row align-items-center"
+  >
+    <app-checkbox-stub
+      checked="false"
+      disabled="false"
+    />
+    <div
+      class="task-title"
+    >
+      Task 1
+    </div>
+  </div>
+  <app-button-stub
+    class="btn-close"
+  />
+</li>
+`;

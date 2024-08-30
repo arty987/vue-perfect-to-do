@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFooter.vue Should render TodoFooter 1`] = `
+<li
+  class="list-group-item d-flex align-items-center justify-content-between"
+>
+  <span>
+    3 items left
+  </span>
+  <div>
+    
+    <app-button-stub
+      class=""
+    />
+    <app-button-stub
+      class=""
+    />
+    <app-button-stub
+      class=""
+    />
+    
+  </div>
+  <app-button-stub />
+</li>
+`;

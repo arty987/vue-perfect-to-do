@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList.vue Should render TodoList 1`] = `
+<div
+  class="task-container"
+>
+  <div
+    class="no-tasks-list-item"
+  >
+    No tasks to display
+  </div>
+  <div />
+</div>
+`;
+
+exports[`TodoList.vue Should render TodoList 2`] = `
+<div
+  class="task-container"
+>
+  <!--v-if-->
+  <div>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      data-draggable="true"
+    >
+      <div
+        class="d-flex flex-row align-items-center"
+      >
+        <input
+          checked=""
+          class="app-checkbox"
+          type="checkbox"
+        />
+        <div
+          class="task-title completed"
+        >
+          Task 1
+        </div>
+      </div>
+      <button
+        class="app-button btn-close"
+        type="button"
+      >
+        
+        
+      </button>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      data-draggable="true"
+    >
+      <div
+        class="d-flex flex-row align-items-center"
+      >
+        <input
+          class="app-checkbox"
+          type="checkbox"
+        />
+        <div
+          class="task-title"
+        >
+          Task 2
+        </div>
+      </div>
+      <button
+        class="app-button btn-close"
+        type="button"
+      >
+        
+        
+      </button>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      data-draggable="true"
+    >
+      <div
+        class="d-flex flex-row align-items-center"
+      >
+        <input
+          class="app-checkbox"
+          type="checkbox"
+        />
+        <div
+          class="task-title"
+        >
+          Task 3
+        </div>
+      </div>
+      <button
+        class="app-button btn-close"
+        type="button"
+      >
+        
+        
+      </button>
+    </li>
+  </div>
+</div>
+`;

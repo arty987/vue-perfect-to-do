@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppInput.vue Should render AppInput 1`] = `
+<input
+  class="app-input"
+  maxlength="150"
+  placeholder="some placeholder"
+  type="text"
+  value="some input value"
+/>
+`;

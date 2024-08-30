@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppMain.vue Should render AppMain 1`] = `
+<main
+  class="app-main"
+>
+  <todo-header-stub />
+  <ul
+    class="list-group"
+  >
+    <todo-input-stub />
+    <div
+      class="shadow-lg rounded"
+    >
+      <todo-list-stub />
+      <todo-footer-stub />
+    </div>
+  </ul>
+</main>
+`;
